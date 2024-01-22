@@ -1306,12 +1306,13 @@ input, select, textarea {
 	}
 
 	body {
-		background-image: url("images/overlay.png"), url("images/bg.jpg");
+		background-color: black; /* Set the default background color */
+		background-image: url("images/overlay.png"), url("images/bg2.jpeg");
 		background-repeat: repeat, no-repeat;
-		background-size: auto, 100% 100%;
+		background-size: auto; /* This will make sure the image covers the area without stretching */
 		background-attachment: fixed;
 		overflow-y: scroll;
-	}
+	  }
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
