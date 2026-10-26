@@ -13,7 +13,7 @@ pre{background:var(--card);border:1px solid var(--line);border-radius:12px;paddi
 code{font-family:ui-monospace,monospace;font-size:.9em;background:var(--card);padding:1px 6px;border-radius:5px}pre code{background:none;padding:0}
 </style></head><body><main>
 <a class="back" href="../">← gabo</a>
-<h1>Approval gates for agents: ask before the side effect</h1><div class="meta">2026-10 · from the orbz codebase</div>
+<h1>Approval gates for agents: ask before the side effect</h1><div class="meta">October 25, 2026 · from the orbz codebase</div>
 <p>An agent that can only read is safe and a little boring. The moment it can send an email, call an MCP server or fetch a URL, every mistake the model makes becomes a real side effect. In orbz I wanted a rule that is easy to explain: <b>if a tool reaches outside the app, a human says yes first.</b></p>
 <h2>One line decides</h2>
 <p>The AI SDK lets you hook the decision per tool call. orbz uses it like this:</p>

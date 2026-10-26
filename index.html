@@ -11,10 +11,10 @@
 <meta property="og:url" content="https://gaborm9.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap">
 <style>
 :root{--bg:#07070b;--card:#0f0f16;--line:#1f1f2c;--fg:#ececf3;--mute:#8a8aa0;--a:#fff;--b:#6b6b6b;--c:#9a9a9a;
---mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Space Grotesk',system-ui,sans-serif}
+--mono:'Geist Mono',ui-monospace,monospace;--sans:'Space Grotesk',system-ui,sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--sans);
@@ -116,8 +116,8 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 .s-orbz .agent{color:var(--mute);font-size:11px}
 .s-of{background:#080808;color:#f0f0f0;font:12px/1.55 'Geist Mono',monospace;flex-direction:column;padding:12px}
 .s-of .box{border:1px solid #272727;background:#0e0e0e;flex:1;display:flex;flex-direction:column;overflow:hidden}
-.s-of .bar2{display:flex;justify-content:space-between;gap:8px;padding:6px 10px;border-bottom:1px solid #272727;background:#080808;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#737373;white-space:nowrap;overflow:hidden}
-.s-of .bar2 b{color:#f0f0f0;font-weight:500}.s-of .amber{color:#ffb700}
+.s-of .bar2{display:flex;justify-content:space-between;gap:8px;padding:6px 10px;border-bottom:1px solid #272727;background:#080808;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:#737373;white-space:nowrap;overflow:hidden}
+.s-of .bar2 b{color:#f0f0f0;font-weight:500}.s-of .amber{color:#b8b8b8}
 .s-of .body{padding:12px 14px;position:relative;flex:1;overflow:hidden}
 .s-of h4{margin:10px 0 4px;font-size:11px;letter-spacing:.14em;color:#fff;font-weight:500}
 .s-of table{width:100%;border-collapse:collapse;font-size:11px}.s-of td,.s-of th{border:1px solid #272727;padding:3px 8px;text-align:left;color:#b8b8b8}.s-of th{color:#737373;font-weight:400}
@@ -140,8 +140,8 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 .s-hy .inp{flex:1;border:1px solid #0003;border-radius:2px;padding:6px 10px;color:#000a;min-width:0}.s-hy .btn2{background:#000;color:#fff;border-radius:2px;padding:6px 14px;font-weight:500}
 .s-hy .st{font-size:10px;font-weight:600;color:#0009;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 6px}
 .s-hy .tc{border:1px solid #0001;border-radius:2px;padding:10px 12px}.s-hy .tc h6{margin:0;font-size:13px;font-weight:600}.s-hy .tc p{margin:1px 0 6px;font-size:10.5px;color:#000b}
-.s-hy .tag{display:inline-block;font-size:10px;padding:1px 7px;border-radius:3px;margin:0 4px 0 0;background:#fdf2f8;border:1px solid #fbcfe8;color:#000}
-.s-hy .hook{font-size:10.5px;padding:6px 8px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:2px;margin-top:6px}
+.s-hy .tag{display:inline-block;font-size:10px;padding:1px 7px;border-radius:3px;margin:0 4px 0 0;background:#f4f4f5;border:1px solid #e4e4e7;color:#000}
+.s-hy .hook{font-size:10.5px;padding:6px 8px;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:2px;margin-top:6px}
 .s-hy .cf{display:flex;justify-content:space-between;font-size:10px;color:#0009}.s-hy .cb{height:6px;background:#0000000d;border-radius:99px;overflow:hidden;margin-top:3px}.s-hy .cb i{display:block;height:100%;background:#000;border-radius:99px;width:0;transition:width 1s}.s-hy .cb i.on{width:100%;opacity:.9}
 .s-sk{background:#0a0a0a;color:#e5e5e5;font:12px/1.6 'Geist Mono',monospace;flex-direction:column;padding:14px 16px}
 .s-sk .dim{color:#737373}.s-sk .cols2{columns:3;font-size:10.5px;color:#a3a3a3;margin:4px 0}
@@ -150,6 +150,15 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 .s-of .bar2>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .s-sk .cols2{columns:auto;display:flex;flex-wrap:wrap;gap:2px 12px}.s-sk .cols2 span{white-space:nowrap}
 .s-of .mis{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}.s-of .mis u{text-decoration:none;color:#f0f0f0}
+.skin{transition:opacity .5s}.skin.fade{opacity:0}
+.grid>*,.card,.demo,.info{min-width:0}html,body{overflow-x:hidden}
+@media(max-width:640px){
+ .s-orbz aside,.s-fl aside,.s-fl .list{display:none}
+ .s-orbz .main{padding:0 14px}.s-hy{padding:12px}
+ .demo.tall{height:360px}.card.big .demo.tall{height:430px}
+ .s-sk{font-size:10.5px}.s-of .tl2{display:none}.s-of table{font-size:10px}
+ .hero{padding:50px 0 30px}.nums{grid-template-columns:repeat(2,1fr)}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-t]{opacity:1;transform:none}.bar{width:var(--w)}.type{width:auto}}
 </style>
 </head>
@@ -161,6 +170,7 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <span class="tag">● currently building orbz</span>
 <h1>I build <em>agents</em><br>that do real work.</h1>
 <p class="lead">Full-stack engineer shipping LLM agents with tool use, human approvals and run logs. Next.js, MCP, Claude.</p>
+<p class="lead" style="margin-top:8px;font-size:1rem">Open to agent-engineering roles and projects.</p>
 <div class="cta"><a class="btn p" href="#work">See the work ↓</a><a class="btn" href="https://github.com/GaboRM9">GitHub</a><a class="btn" href="mailto:gabo9rm@gmail.com">Email me</a></div>
 </header>
 
@@ -184,7 +194,7 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <div class="links"><a href="https://github.com/GaboRM9/orbz">source →</a></div></div></article>
 
 <article class="card"><div class="demo tall" data-loop="13000"><div class="skin s-of">
-<div class="box"><div class="bar2"><span class="mis">◈ MISSION: <u>EU BATTERY SUPPLY</u> // HORIZON: <u>5 YEARS</u></span><span style="position:relative;min-width:150px;text-align:right"><span class="amber" data-x="5400">OMEN ONLINE</span><span data-t="5600" style="position:absolute;right:0;color:#fff">TRANSMITTING REPORT</span><span data-t="10500" style="position:absolute;right:0;background:#080808;color:#737373">MISSION COMPLETE</span></span></div>
+<div class="box"><div class="bar2"><span class="mis">◈ MISSION: <u>EU BATTERIES</u> // HORIZON: <u>5 YEARS</u></span><span style="position:relative;min-width:140px;text-align:right"><span class="amber" data-x="5400">OMEN ONLINE</span><span data-t="5600" data-x="10500" style="position:absolute;right:0;color:#fff">TRANSMITTING REPORT</span><span data-t="10500" style="position:absolute;right:0;background:#080808;color:#737373">MISSION COMPLETE</span></span></div>
 <div class="body">
 <div data-x="5400"><div class="amber" data-t="200"><span class="blink">◈</span> OMEN: querying Polymarket — scanning active prediction markets</div>
 <div class="amber" data-t="1700"><span class="blink">◈</span> OMEN: querying Metaculus — retrieving crowd probabilities</div>
@@ -247,18 +257,16 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 
 <p class="also">Also built for fun: <a href="https://github.com/GaboRM9/terminal-city">terminal-city</a> (a living ASCII skyline) and <a href="https://github.com/GaboRM9/sonidito.8bit">sonidito.8bit</a> (8-bit web MIDI player).</p>
 
-<h2 id="how">how orbz works</h2>
-<div class="flow"><span>user message</span><i>→</i><span>auth + agent config</span><i>→</i><span>Claude</span><i>→</i><span>tool call</span><i>→</i><span class="gate">approval gate</span><i>→</i><span>execute</span><i>→</i><span>run log</span></div>
-<p style="color:var(--mute);margin-top:14px">Read-only tools run straight away. Anything that talks to the outside world (every MCP tool, <code>fetchUrl</code>, <code>createSkill</code>) stops and asks you in the chat. Each request is one run: model, tokens, timings, every tool call and every approve or deny land in SQLite and show up in a Runs tab. <a href="https://github.com/GaboRM9/orbz#how-it-works" style="color:var(--fg)">Diagram and code →</a></p>
-
-<h2>safety by design</h2>
+<h2 id="how">how orbz stays safe</h2>
+<div class="flow"><span>user message</span><i>→</i><span>Claude</span><i>→</i><span>tool call</span><i>→</i><span class="gate">approval gate</span><i>→</i><span>execute</span><i>→</i><span>run log</span></div>
+<p style="color:var(--mute);margin:12px 0 18px">Read-only tools run straight away. Everything that reaches outside the app stops and asks. <a href="https://github.com/GaboRM9/orbz#how-it-works" style="color:var(--fg)">Full diagram and code →</a></p>
 <div class="cols">
 <div class="box"><b>Approval gate</b><p>Side-effecting tools wait for an explicit approve or deny. The decision is logged once and can't be replayed.</p></div>
 <div class="box"><b>SSRF-safe fetch</b><p>Public hosts only. Every resolved IP is checked, redirects are re-validated per hop, body capped, 8s timeout.</p></div>
 <div class="box"><b>Untrusted tool output</b><p>The model is told that MCP output is data, never instructions. A dead server is skipped, never fatal.</p></div>
 <div class="box"><b>Fails closed</b><p>No password configured means nobody gets in. HMAC sessions, constant-time compare, auth re-checked in every server action.</p></div>
 </div>
-<div class="nums"><div><strong>8</strong>max steps per run</div><div><strong>3</strong>redirect hops allowed</div><div><strong>64 KB</strong>fetch body cap</div><div><strong>8 s</strong>tool and MCP timeout</div><div><strong>8</strong>generative UI tools</div><div><strong>13</strong>tests in CI</div></div>
+<div class="nums"><div><strong>8</strong>max steps per run</div><div><strong>3</strong>redirect hops allowed</div><div><strong>64 KB</strong>fetch body cap</div><div><strong>8 s</strong>tool and MCP timeout</div></div>
 
 <h2>writing</h2>
 <div class="posts">
@@ -267,9 +275,11 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 </div>
 
 <h2 id="stack">stack</h2>
-<div class="stack"><span>TypeScript</span><span>Next.js</span><span>React</span><span>Vue 3</span><span>Node / Express</span><span>Prisma</span><span>Postgres + pgvector</span><span>Claude / Anthropic</span><span>Vercel AI SDK</span><span>MCP</span><span>RAG</span><span>Stripe</span><span>Docker</span><span>Python</span></div>
+<div class="stack"><span>TypeScript</span><span>Next.js</span><span>React</span><span>Vue 3</span><span>Node / Express</span><span>Prisma</span><span>Postgres + pgvector</span><span>SQLite</span><span>Claude / Anthropic</span><span>Gemini</span><span>Vercel AI SDK</span><span>MCP</span><span>RAG</span><span>Stripe</span></div>
 
-<footer>demos are simulations rebuilt from each project's real UI code (tokens, labels, tool names) · hand-built, no framework<br><a href="mailto:gabo9rm@gmail.com">gabo9rm@gmail.com</a> · <a href="https://github.com/GaboRM9">github.com/GaboRM9</a></footer>
+<h2 id="contact">contact</h2>
+<div class="box" style="padding:28px"><b style="font-size:1.4rem;letter-spacing:-.02em;margin-bottom:6px">Have an agent to build, or a team hiring for one?</b><p style="margin-bottom:16px">Email me what it should do and what it must never do. I'll reply with how I'd build it.</p><div class="cta" style="margin:0"><a class="btn p" href="mailto:gabo9rm@gmail.com">gabo9rm@gmail.com</a><a class="btn" href="https://github.com/GaboRM9">GitHub</a></div></div>
+<footer>demos are simulations rebuilt from each project's real UI code (tokens, labels, tool names), colors desaturated to match this page · hand-built, no framework<br><a href="mailto:gabo9rm@gmail.com">gabo9rm@gmail.com</a> · <a href="https://github.com/GaboRM9">github.com/GaboRM9</a></footer>
 </div>
 
 <script>
@@ -277,13 +287,16 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 document.querySelectorAll('.demo[data-loop]').forEach(d=>{
   const els=[...d.querySelectorAll('[data-t]')],xs=[...d.querySelectorAll('[data-x]')];let timers=[],run=false;
   const T=(f,ms)=>timers.push(setTimeout(f,ms));
+  const sk=d.querySelector('.skin');
   const play=()=>{
+    if(sk)T(()=>sk.classList.remove('fade'),150);
     els.forEach(e=>e.classList.remove('on'));xs.forEach(e=>e.classList.remove('gone'));
     els.forEach(e=>T(()=>e.classList.add('on'),+e.dataset.t));
     xs.forEach(e=>T(()=>e.classList.add('gone'),+e.dataset.x));
     const ap=d.querySelector('[data-ap]');if(ap){T(()=>ap.classList.add('press'),4800);T(()=>ap.classList.remove('press'),5100)}
     const fc=d.querySelector('#fl-chat'),fs=d.querySelector('#fl-skills');
     if(fc){fc.classList.add('on');fs.classList.remove('on');T(()=>{fc.classList.remove('on');fs.classList.add('on')},6000)}
+    if(sk)T(()=>sk.classList.add('fade'),+d.dataset.loop-700);
     T(()=>run&&play(),+d.dataset.loop);
   };
   new IntersectionObserver(([en])=>{
