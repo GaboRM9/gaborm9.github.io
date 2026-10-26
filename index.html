@@ -267,17 +267,6 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 
 <p class="also">Also built for fun: <a href="https://github.com/GaboRM9/terminal-city">terminal-city</a> (a living ASCII skyline) and <a href="https://github.com/GaboRM9/sonidito.8bit">sonidito.8bit</a> (8-bit web MIDI player).</p>
 
-<h2 id="how">how orbz stays safe</h2>
-<div class="flow"><span>user message</span><i>→</i><span>Claude</span><i>→</i><span>tool call</span><i>→</i><span class="gate">approval gate</span><i>→</i><span>execute</span><i>→</i><span>run log</span></div>
-<p style="color:var(--mute);margin:12px 0 18px">Read-only tools run straight away. Everything that reaches outside the app stops and asks. <a href="https://github.com/GaboRM9/orbz#how-it-works" style="color:var(--fg)">Full diagram and code →</a></p>
-<div class="cols">
-<div class="box"><b>Approval gate</b><p>Side-effecting tools wait for an explicit approve or deny. The decision is logged once and can't be replayed.</p></div>
-<div class="box"><b>SSRF-safe fetch</b><p>Public hosts only. Every resolved IP is checked, redirects are re-validated per hop, body capped, 8s timeout.</p></div>
-<div class="box"><b>Untrusted tool output</b><p>The model is told that MCP output is data, never instructions. A dead server is skipped, never fatal.</p></div>
-<div class="box"><b>Fails closed</b><p>No password configured means nobody gets in. HMAC sessions, constant-time compare, auth re-checked in every server action.</p></div>
-</div>
-<div class="nums"><div><strong>8</strong>max steps per run</div><div><strong>3</strong>redirect hops allowed</div><div><strong>64 KB</strong>fetch body cap</div><div><strong>8 s</strong>tool and MCP timeout</div></div>
-
 <h2 id="certs">certifications</h2>
 <div class="certs"><div class="ac-grid"><a class="ac" href="https://academy.claude.com/verify/aaa6f722984998203f3a1ef64c10c82d" target="_blank" rel="noopener"><img class="al" src="badges/anthropic.svg" alt="Anthropic" width="22" height="22"><small>Anthropic · Oct 2026</small><b>Claude Academy: Deploying Claude Enterprise with confidence</b><code>ID aaa6f722984998203f3a1ef64c10c82d</code><span>verify →</span></a><a class="ac" href="https://verify.skilljar.com/c/85uwjodvtqwv" target="_blank" rel="noopener"><img class="al" src="badges/anthropic.svg" alt="Anthropic" width="22" height="22"><small>Anthropic · Mar 2026</small><b>AI Fluency Framework &amp; Foundations</b><code>ID 85uwjodvtqwv</code><span>verify →</span></a><a class="ac" href="https://verify.skilljar.com/c/6w6jv27o4r3c" target="_blank" rel="noopener"><img class="al" src="badges/anthropic.svg" alt="Anthropic" width="22" height="22"><small>Anthropic · Mar 2026</small><b>Claude with Google Cloud&#x27;s Vertex AI</b><code>ID 6w6jv27o4r3c</code><span>verify →</span></a><a class="ac" href="https://verify.skilljar.com/c/nmr27w96mqhu" target="_blank" rel="noopener"><img class="al" src="badges/anthropic.svg" alt="Anthropic" width="22" height="22"><small>Anthropic · Mar 2026</small><b>Model Context Protocol: Advanced Topics</b><code>ID nmr27w96mqhu</code><span>verify →</span></a></div>
 <p class="cl">Google · Apr 2026 <a href="https://www.credly.com/badges/e46c5643-60b9-4c79-b96a-6208af139e76/linked_in_profile" target="_blank" rel="noopener">verify on Credly →</a></p>
