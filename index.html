@@ -159,7 +159,9 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
  .s-sk{font-size:10.5px}.s-of .tl2{display:none}.s-of table{font-size:10px}
  .hero{padding:50px 0 30px}.nums{grid-template-columns:repeat(2,1fr)}
 }
-.name{font-family:var(--mono);font-size:1rem;color:var(--fg);margin:22px 0 -6px;letter-spacing:.02em}
+.name{font-family:var(--mono);font-size:clamp(1.5rem,4vw,2.4rem);color:var(--fg);margin:22px 0 -6px;letter-spacing:-.01em;font-weight:600}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.avatar{width:clamp(110px,18vw,200px);height:auto;aspect-ratio:1;border-radius:20px;border:1px solid var(--line);image-rendering:pixelated;flex:none}
 .ac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
 .ac{display:flex;flex-direction:column;gap:6px;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:16px 18px;text-decoration:none;transition:.2s}
 .ac:hover,.gb:hover{border-color:#ffffff80;transform:translateY(-3px)}
@@ -177,8 +179,9 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 
 <header class="hero">
 <span class="tag">● currently building orbz</span>
-<div class="name">Gabriel Rodriguez</div>
-<h1><em>AI</em> Engineer</h1>
+<div class="hero-top"><div><div class="name">Gabriel Rodriguez</div>
+<h1><em>AI</em> Engineer</h1></div>
+<img class="avatar" src="avatar.png" alt="Pixel-art portrait of Gabriel" width="200" height="200"></div>
 <p class="lead">Full-stack engineer shipping LLM agents with tool use, human approvals and run logs. Next.js, MCP, Claude.</p>
 <p class="lead" style="margin-top:8px;font-size:1rem">Open to agent-engineering roles and projects.</p>
 <div class="cta"><a class="btn p" href="#work">See the work ↓</a><a class="btn" href="https://github.com/GaboRM9">GitHub</a><a class="btn" href="mailto:gabo9rm@gmail.com">Email me</a></div>
