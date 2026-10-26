@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://gaborm9.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap">
 <style>
 :root{--bg:#07070b;--card:#0f0f16;--line:#1f1f2c;--fg:#ececf3;--mute:#8a8aa0;--a:#fff;--b:#6b6b6b;--c:#9a9a9a;
 --mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Space Grotesk',system-ui,sans-serif}
@@ -93,6 +93,63 @@ svg text{font-family:var(--mono);font-size:10px;fill:var(--fg)}
 .posts a:hover b{text-decoration:underline}.posts span{display:block;color:var(--mute);font-size:.9rem}
 .also{color:var(--mute);font-size:.95rem;margin-top:26px}.also a{color:var(--fg)}
 footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--mute);text-align:center}
+/* ---- app skins: copied from each project's real UI tokens ---- */
+.demo.tall{height:340px}
+.skin{position:absolute;inset:26px 0 0 0;display:flex;font-size:12.5px;line-height:1.5}
+.pane{position:absolute;inset:0;transition:opacity .4s}.pane.gone{opacity:0;pointer-events:none}
+[data-x]{transition:opacity .4s}[data-x].gone{opacity:0}
+.s-orbz{background:#000;color:#fff;font-family:'Geist',system-ui,sans-serif;--line:#262626;--mute:#a3a3a3}
+.s-orbz aside{width:168px;border-right:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:3px}
+.s-orbz .logo{font:300 14px 'Geist Mono',monospace;letter-spacing:.3em;margin:0 6px 18px;display:flex;gap:8px;align-items:center}
+.s-orbz .logo i{width:14px;height:14px;border-radius:50%;border:1px solid #fff;display:block}
+.s-orbz .ni{padding:5px 10px;color:var(--mute);border-left:1px solid transparent}.s-orbz .ni.on{color:#fff;border-color:#fff}
+.s-orbz .rec{margin:16px 0 4px 10px;color:var(--mute);font-size:11px}
+.s-orbz .main{flex:1;padding:0 22px;display:flex;flex-direction:column;overflow:hidden}
+.s-orbz header{display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:10px 0}
+.s-orbz .av{width:26px;height:26px;border-radius:50%;background:#1a1a1a;border:1px solid var(--line);display:grid;place-items:center;font-size:11px}
+.s-orbz .u{align-self:flex-end;border:1px solid var(--line);border-radius:6px;padding:5px 10px;margin-top:12px;max-width:85%}
+.s-orbz .tl{color:var(--mute);font-size:11.5px;margin-top:9px}
+.s-orbz .ap{border:1px solid var(--line);border-radius:6px;padding:11px 12px;margin-top:9px}
+.s-orbz .ap small{color:var(--mute);font-size:11px;display:block}
+.s-orbz .b{display:inline-block;border:1px solid var(--line);border-radius:4px;padding:3px 12px;margin:8px 6px 0 0;transition:.3s}
+.s-orbz .b.solid{background:#fff;color:#000;border-color:#fff}.s-orbz .b.press{transform:scale(.94);opacity:.7}
+.s-orbz .agent{color:var(--mute);font-size:11px}
+.s-of{background:#080808;color:#f0f0f0;font:12px/1.55 'Geist Mono',monospace;flex-direction:column;padding:12px}
+.s-of .box{border:1px solid #272727;background:#0e0e0e;flex:1;display:flex;flex-direction:column;overflow:hidden}
+.s-of .bar2{display:flex;justify-content:space-between;gap:8px;padding:6px 10px;border-bottom:1px solid #272727;background:#080808;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#737373;white-space:nowrap;overflow:hidden}
+.s-of .bar2 b{color:#f0f0f0;font-weight:500}.s-of .amber{color:#ffb700}
+.s-of .body{padding:12px 14px;position:relative;flex:1;overflow:hidden}
+.s-of h4{margin:10px 0 4px;font-size:11px;letter-spacing:.14em;color:#fff;font-weight:500}
+.s-of table{width:100%;border-collapse:collapse;font-size:11px}.s-of td,.s-of th{border:1px solid #272727;padding:3px 8px;text-align:left;color:#b8b8b8}.s-of th{color:#737373;font-weight:400}
+.s-of .scan{height:1px;background:#272727;margin-top:8px;overflow:hidden;position:relative}.s-of .scan::after{content:"";position:absolute;height:1px;width:25%;background:#b8b8b8;animation:sc 1.6s linear infinite}
+@keyframes sc{from{left:-25%}to{left:100%}}
+.s-of .blink{animation:bl 1s steps(2) infinite}
+.s-of .tl2{display:flex;gap:6px;margin-top:8px;font-size:10px;color:#737373}.s-of .tl2 span{flex:1;border-top:1px solid #b8b8b8;padding-top:3px}
+.s-fl{background:#fff;color:#0a0a0b;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;--b:#e4e4e7;--m:#71717a;--ac:#f4f4f5}
+.s-fl aside{width:150px;border-right:1px solid var(--b);padding:10px 8px;display:flex;flex-direction:column;gap:2px}
+.s-fl .ws{border:1px solid var(--b);border-radius:8px;padding:6px 8px;margin-bottom:8px;font-size:12px;display:flex;justify-content:space-between}
+.s-fl .ni{padding:6px 10px;border-radius:8px;color:var(--m)}.s-fl .ni.on{background:var(--ac);color:#0a0a0b;font-weight:500}
+.s-fl .list{width:140px;border-right:1px solid var(--b);padding:10px 8px}.s-fl .list h5{margin:2px 6px 8px;font-size:13px}
+.s-fl .ci{padding:6px 8px;border-radius:8px;font-size:11.5px}.s-fl .ci.on{background:var(--ac)}.s-fl .ci small{display:block;color:var(--m);font-size:10px}
+.s-fl .th{flex:1;display:flex;flex-direction:column;padding:0 14px;overflow:hidden}.s-fl .th header{border-bottom:1px solid var(--b);padding:9px 0;font-weight:500;font-size:12.5px}
+.s-fl .m{border-radius:12px;padding:6px 11px;margin-top:10px;max-width:85%;width:fit-content}.s-fl .m.u{background:#18181b;color:#fafafa;align-self:flex-end}.s-fl .m.a{background:var(--ac)}
+.s-fl .nd{position:absolute;border:1px solid var(--b);background:#fff;border-radius:8px;padding:5px 10px;font-size:11px;box-shadow:0 1px 3px #0001}
+.s-fl .nd small{display:block;color:var(--m);font-size:9px}
+.s-hy{background:#fff;color:#000;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;flex-direction:column;padding:14px 18px;overflow:hidden}
+.s-hy .ttl{font-weight:600;font-size:14px;margin-bottom:8px}.s-hy .row2{display:flex;gap:8px}
+.s-hy .inp{flex:1;border:1px solid #0003;border-radius:2px;padding:6px 10px;color:#000a;min-width:0}.s-hy .btn2{background:#000;color:#fff;border-radius:2px;padding:6px 14px;font-weight:500}
+.s-hy .st{font-size:10px;font-weight:600;color:#0009;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 6px}
+.s-hy .tc{border:1px solid #0001;border-radius:2px;padding:10px 12px}.s-hy .tc h6{margin:0;font-size:13px;font-weight:600}.s-hy .tc p{margin:1px 0 6px;font-size:10.5px;color:#000b}
+.s-hy .tag{display:inline-block;font-size:10px;padding:1px 7px;border-radius:3px;margin:0 4px 0 0;background:#fdf2f8;border:1px solid #fbcfe8;color:#000}
+.s-hy .hook{font-size:10.5px;padding:6px 8px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:2px;margin-top:6px}
+.s-hy .cf{display:flex;justify-content:space-between;font-size:10px;color:#0009}.s-hy .cb{height:6px;background:#0000000d;border-radius:99px;overflow:hidden;margin-top:3px}.s-hy .cb i{display:block;height:100%;background:#000;border-radius:99px;width:0;transition:width 1s}.s-hy .cb i.on{width:100%;opacity:.9}
+.s-sk{background:#0a0a0a;color:#e5e5e5;font:12px/1.6 'Geist Mono',monospace;flex-direction:column;padding:14px 16px}
+.s-sk .dim{color:#737373}.s-sk .cols2{columns:3;font-size:10.5px;color:#a3a3a3;margin:4px 0}
+.s-sk h4{margin:8px 0 2px;font-size:11px;color:#fff}
+.card.big .demo.tall{height:410px}
+.s-of .bar2>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.s-sk .cols2{columns:auto;display:flex;flex-wrap:wrap;gap:2px 12px}.s-sk .cols2 span{white-space:nowrap}
+.s-of .mis{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}.s-of .mis u{text-decoration:none;color:#f0f0f0}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-t]{opacity:1;transform:none}.bar{width:var(--w)}.type{width:auto}}
 </style>
 </head>
@@ -110,67 +167,80 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <h2 id="work">selected work</h2>
 <section class="grid">
 
-<article class="card big"><div class="demo" data-loop="10000"><div class="stage">
-<div class="bub me" data-t="300">Archive last week's tickets and email me a summary</div><div class="clr"></div>
-<div data-t="1500" class="mute">▸ <span class="v">search_tickets</span>(range: "7d") <span class="g">→ 42 results</span></div>
-<div data-t="2600" class="mute">▸ <span class="v">send_email</span>(to: "gabo") <span class="r">needs approval</span></div>
-<div class="appr" data-t="3400">Allow <b>send_email</b> to gabo9rm@gmail.com?<br><span class="ok" data-t="5200">Approve</span></div>
-<div data-t="6600" class="g" style="margin-top:8px">✓ Sent. 42 tickets archived. Run saved to history.</div>
+<article class="card big"><div class="demo tall" data-loop="12000"><div class="skin s-orbz">
+<aside><div class="logo"><i></i>orbz</div><div class="ni">Chat</div><div class="ni on">Agents</div><div class="ni">Skills</div><div class="ni">Settings</div><div class="rec">Recent</div><div class="ni" style="padding:3px 10px">Docs digest</div><div class="ni" style="padding:3px 10px">Launch checklist</div></aside>
+<div class="main">
+<header><div class="av">R</div><div><div style="font-size:12.5px;font-weight:500">Research assistant</div><div style="color:#a3a3a3;font-size:11px">Reads the web and summarizes it</div></div></header>
+<div class="u" data-t="300">Summarize the Next.js 16 release notes</div>
+<div class="tl" data-t="1500">▸ Reading a web page…</div>
+<div class="ap" data-t="2400"><small>Needs your approval</small>Open https://nextjs.org/blog/next-16
+<div><span class="b solid" data-ap>Approve</span><span class="b">Deny</span></div><small style="margin-top:8px">▸ Details</small></div>
+<div class="tl" data-t="6400">▸ Read a web page</div>
+<div data-t="6900" style="margin-top:8px;font-size:13px;line-height:1.7"><div class="agent">Research assistant</div>Next.js 16 makes Turbopack the default bundler, adds Cache Components and renames middleware to proxy. Three things to check before upgrading: the async request APIs, the new caching model and the Node 20+ requirement.</div>
 </div></div>
-<div class="info"><h3>orbz</h3><p>Agent workspace where every risky tool call waits for a human. Streaming chat, MCP tools, approvals, run history.</p>
+</div>
+<div class="info"><h3>orbz</h3><p>Agent workspace where every outward-facing tool call waits for a human. Streaming chat, MCP tools, skills, run history.</p>
 <div class="chips"><span>Next.js 16</span><span>AI SDK 7</span><span>MCP</span><span>Claude</span><span>SQLite</span></div>
 <div class="links"><a href="https://github.com/GaboRM9/orbz">source →</a></div></div></article>
 
-<article class="card"><div class="demo" data-loop="9000"><div class="stage">
-<div class="in"><span class="mute">topic&gt;</span> <span class="type" data-t="200" style="--n:22">EU battery supply 2030</span></div>
-<div data-t="1700" class="mute">browsing 38 sources…</div>
-<div class="row" data-t="2300"><span>Scenario A</span><div class="bar" data-t="2400" style="--w:62%"></div><span class="g">62%</span></div>
-<div class="row" data-t="2800"><span>Scenario B</span><div class="bar" data-t="2900" style="--w:27%"></div><span class="g">27%</span></div>
-<div class="row" data-t="3300"><span>Wild card</span><div class="bar" data-t="3400" style="--w:8%"></div><span class="g">8%</span></div>
-<div data-t="4500" class="mute">confidence: <span class="g">medium</span> · counterargument steelmanned</div>
-</div></div>
-<div class="info"><h3>OpenFuture</h3><p>Give it a topic. It browses the live web and returns a probabilistic forecast with scenarios, wild cards and counterarguments.</p>
-<div class="chips"><span>TypeScript</span><span>Claude</span><span>web research</span></div>
+<article class="card"><div class="demo tall" data-loop="13000"><div class="skin s-of">
+<div class="box"><div class="bar2"><span class="mis">◈ MISSION: <u>EU BATTERY SUPPLY</u> // HORIZON: <u>5 YEARS</u></span><span style="position:relative;min-width:150px;text-align:right"><span class="amber" data-x="5400">OMEN ONLINE</span><span data-t="5600" style="position:absolute;right:0;color:#fff">TRANSMITTING REPORT</span><span data-t="10500" style="position:absolute;right:0;background:#080808;color:#737373">MISSION COMPLETE</span></span></div>
+<div class="body">
+<div data-x="5400"><div class="amber" data-t="200"><span class="blink">◈</span> OMEN: querying Polymarket — scanning active prediction markets</div>
+<div class="amber" data-t="1700"><span class="blink">◈</span> OMEN: querying Metaculus — retrieving crowd probabilities</div>
+<div class="amber" data-t="3200"><span class="blink">◈</span> OMEN: retrieving historical base rates and reference class</div>
+<div class="amber" data-t="4400"><span class="blink">◈</span> OMEN: running pre-mortem analysis</div><div class="scan"></div></div>
+<div style="position:absolute;inset:12px 14px" data-t="5600"><h4>## BOTTOM LINE</h4><div style="color:#b8b8b8">Domestic cell capacity roughly doubles by 2030, but import dependence on cathode materials stays above 60%.</div>
+<h4>## SCENARIO ANALYSIS</h4><table><tr><th>Scenario</th><th>Prob.</th><th>Signal</th></tr><tr><td>Managed ramp</td><td>55%</td><td>Gigafactory starts</td></tr><tr><td>Supply squeeze</td><td>30%</td><td>Lithium &gt; $25k/t</td></tr><tr><td>Wild card</td><td>15%</td><td>Sodium-ion breakout</td></tr></table>
+<div class="tl2"><span>3 MO</span><span>1 YR</span><span>3 YR</span><span>5 YR</span></div></div>
+</div></div></div>
+</div>
+<div class="info"><h3>OpenFuture</h3><p>Give it a topic and a horizon. It queries prediction markets and the live web, then streams a forecast with scenarios, base rates, a steelman and wild cards.</p>
+<div class="chips"><span>Next.js</span><span>Claude</span><span>Polymarket</span><span>Metaculus</span></div>
 <div class="links"><a href="https://openfuture.wtf/app">live →</a><a href="https://github.com/GaboRM9/OpenFuture">source →</a></div></div></article>
 
-<article class="card"><div class="demo"><div class="stage">
-<svg viewBox="0 0 440 190" width="100%" height="100%">
-<path id="flow" d="M60 95H300L380 50" stroke="#2c2c40" fill="none" stroke-width="2"/>
-<path d="M300 95L380 140" stroke="#2c2c40" fill="none" stroke-width="2"/>
-<rect class="node" x="20" y="75" width="80" height="40" rx="8"/><text x="38" y="99">webhook</text>
-<rect class="node" x="150" y="75" width="80" height="40" rx="8"/><text x="176" y="99">LLM</text>
-<rect class="node" x="270" y="75" width="60" height="40" rx="8"/><text x="288" y="99">RAG</text>
-<rect class="node" x="340" y="30" width="80" height="40" rx="8"/><text x="362" y="54">slack</text>
-<rect class="node" x="340" y="120" width="80" height="40" rx="8"/><text x="362" y="144">email</text>
-<circle r="5" fill="#fff"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#flow"/></animateMotion></circle>
-</svg></div></div>
-<div class="info"><h3>fl0u</h3><p>One surface to build, run and manage AI agents: visual flow editor, knowledge base (RAG), integrations and webhooks.</p>
-<div class="chips"><span>Vue 3</span><span>Express</span><span>Prisma</span><span>pgvector</span><span>pnpm monorepo</span></div>
+<article class="card"><div class="demo tall" data-loop="12000"><div class="skin s-fl">
+<aside><div class="ws"><span>Personal</span><span>▾</span></div><div class="ni on" id="fl-chat">Chat</div><div class="ni">Agents</div><div class="ni" id="fl-skills">Skills</div><div class="ni">Integrations</div></aside>
+<div style="position:relative;flex:1">
+<div class="pane" data-x="6000" style="display:flex"><div class="list"><h5>Chat</h5><div class="ci on">Webhook digest<small>Today</small></div><div class="ci">Onboarding FAQ<small>Yesterday</small></div></div>
+<div class="th"><header>Webhook digest</header><div class="m u" data-t="300">Summarize today's webhook events</div><div class="m a" data-t="1500">You had 128 events: 121 delivered, 7 failed. All failures came from one endpoint (timeouts after 10s).</div><div class="m a" data-t="3200">Want me to post this to #ops via the Slack integration?</div></div></div>
+<div class="pane" data-t="6000" style="background:#fff;background-image:radial-gradient(#e4e4e7 1px,transparent 1px);background-size:16px 16px">
+<div style="position:absolute;left:14px;top:10px;font-weight:500;font-size:12.5px">Skill: failed-webhook digest</div>
+<div class="nd" style="left:14px;top:120px">Webhook<small>trigger</small></div>
+<div class="nd" style="left:110px;top:120px">LLM<small>summarize</small></div>
+<div class="nd" style="left:200px;top:80px">Knowledge<small>RAG</small></div>
+<div class="nd" style="left:200px;top:160px">Slack<small>#ops</small></div>
+<svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 280 260"><path d="M70 136H110M160 136C180 136 180 96 200 96M160 136C180 136 180 176 200 176" stroke="#a1a1aa" fill="none"/><circle r="4" fill="#18181b"><animateMotion dur="2.5s" repeatCount="indefinite" path="M70 136H110M160 136C180 136 180 176 200 176"/></circle></svg></div>
+</div></div></div>
+<div class="info"><h3>fl0u</h3><p>One surface to build, run and manage AI agents: chat, agents, skills with a visual flow editor, knowledge (RAG), integrations and webhooks.</p>
+<div class="chips"><span>Vue 3</span><span>Vue Flow</span><span>Express</span><span>Prisma</span><span>pgvector</span><span>pnpm monorepo</span></div>
 <div class="links"><a href="https://github.com/GaboRM9/fl0u">source →</a></div></div></article>
 
-<article class="card"><div class="demo" data-loop="8000"><div class="stage">
-<div class="in"><span class="mute">url&gt;</span> <span class="type" data-t="200" style="--n:25">https://sneakers.shop/air</span></div>
-<div data-t="1700" class="mute">analyzing product, competitors, culture…</div>
-<div data-t="2400" style="margin-top:8px" class="mute">micro-tribes</div>
-<div data-t="2700"><span class="chip">#sneakerheads · 18-24</span><span class="chip">#runclub · 25-34</span></div>
-<div data-t="3300"><span class="chip">#streetwear collectors</span><span class="chip">#gen-z thrifters</span></div>
-<div data-t="3900"><span class="chip">#marathon dads</span></div>
-</div></div>
-<div class="info"><h3>hyp3rT4rget</h3><p>Paste a product URL, get hyper-targeted audience segments. Multi-tenant SaaS with JWT, Stripe plans and API keys.</p>
-<div class="chips"><span>React</span><span>Express</span><span>Gemini</span><span>Stripe</span></div>
+<article class="card"><div class="demo tall" data-loop="9000"><div class="skin s-hy">
+<div class="ttl">AI Audience Architect</div>
+<div class="row2"><div class="inp"><span class="type" data-t="200" style="--n:26;color:#000">https://sneakers.shop/air-1</span></div><div class="btn2">Generate</div></div>
+<div data-t="1800"><div class="st">Micro-tribes</div>
+<div class="tc"><h6>Run-club regulars</h6><p>Weekend 10k crews that treat sneakers as gear and as identity.</p>
+<div><span class="tag">consistency</span><span class="tag">community</span><span class="tag">gear talk</span></div>
+<div class="hook" data-t="3200">“Your tempo run shoe is not your recovery shoe.”</div></div></div>
+<div data-t="4200" style="margin-top:12px"><div class="cf"><span>Confidence Level</span><b style="color:#000">High</b></div><div class="cb"><i data-t="4300"></i></div></div>
+</div>
+</div>
+<div class="info"><h3>hyp3rT4rget</h3><p>Paste a product URL and get micro-tribes, shared values, pain points and zero-click content hooks. Multi-tenant SaaS with JWT, Stripe plans and API keys.</p>
+<div class="chips"><span>React</span><span>Express</span><span>Gemini</span><span>Prisma</span><span>Stripe</span></div>
 <div class="links"><a href="https://github.com/GaboRM9/hyp3rT4rget">source →</a></div></div></article>
 
-<article class="card"><div class="demo" data-loop="8000"><div class="stage">
-<div><span class="g">❯</span> <span class="type" data-t="200" style="--n:33">/forecast "interest rates next 12mo"</span></div>
-<div data-t="1700" class="mute">⠋ researching live sources</div>
-<div data-t="2500" class="v">## Forecast</div>
-<div data-t="2900">• Base case <span class="g">55%</span>: two cuts by Q3</div>
-<div data-t="3300">• Hawkish <span class="g">30%</span>: sticky inflation</div>
-<div data-t="3700">• Tail risk <span class="r">15%</span>: credit event</div>
-<div data-t="4300" class="mute cur">cp skills/forecast/SKILL.md ~/.claude/commands/ </div>
+<article class="card"><div class="demo tall" data-loop="12000"><div class="skin s-sk">
+<div><span style="color:#fff">❯</span> <span class="type" data-t="200" style="--n:44">for d in skills/*/; do cp "$d/SKILL.md" ...</span></div>
+<div class="dim" data-t="1500">copied 52 skills</div>
+<div class="cols2" data-t="2000"><span>agent-spec</span><span>failure-modes</span><span>eval-suite</span><span>guardrail-design</span><span>autonomy-ladder</span><span>prompt-injection-audit</span><span>tool-design</span><span>cost-optimizer</span><span>trajectory-review</span><span>loop-breaker</span><span>permissions-audit</span><span>rollback-plan</span></div>
+<div data-t="3600"><span style="color:#fff">❯</span> <span class="type" data-t="3700" style="--n:34">/agent-spec "support triage agent"</span></div>
+<div data-t="5200"><h4>SPEC.md</h4><span class="dim">Goal · Non-goals · Tools · Autonomy · Budgets · Metrics · Failure modes · Open questions</span></div>
+<div data-t="6400"><h4>Goal</h4>Route every inbound ticket to the right queue within 60s, with a human reviewing anything under 80% confidence.</div>
+<div data-t="7600" class="dim" style="margin-top:6px">Verified: queue names from repo. Assumed: 60s SLA.</div>
 </div></div>
-<div class="info"><h3>gab0-agentic-skills</h3><p>Slash commands for Claude Code that give it a focused persona, live tools and structured output. Used daily.</p>
-<div class="chips"><span>Claude Code</span><span>skills</span><span>MIT</span></div>
+<div class="info"><h3>gab0-agentic-skills</h3><p>52 reusable skills for designing, evaluating and operating AI agents: specs, guardrails, evals, failure modes, cost control. Plain markdown, works in any agent harness that loads skills.</p>
+<div class="chips"><span>Markdown skills</span><span>agent design</span><span>evals</span><span>MIT</span></div>
 <div class="links"><a href="https://github.com/GaboRM9/gab0-agentic-skills">source →</a></div></div></article>
 
 </section>
@@ -199,17 +269,22 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <h2 id="stack">stack</h2>
 <div class="stack"><span>TypeScript</span><span>Next.js</span><span>React</span><span>Vue 3</span><span>Node / Express</span><span>Prisma</span><span>Postgres + pgvector</span><span>Claude / Anthropic</span><span>Vercel AI SDK</span><span>MCP</span><span>RAG</span><span>Stripe</span><span>Docker</span><span>Python</span></div>
 
-<footer>demos are looping simulations of each project · hand-built, no framework<br><a href="mailto:gabo9rm@gmail.com">gabo9rm@gmail.com</a> · <a href="https://github.com/GaboRM9">github.com/GaboRM9</a></footer>
+<footer>demos are simulations rebuilt from each project's real UI code (tokens, labels, tool names) · hand-built, no framework<br><a href="mailto:gabo9rm@gmail.com">gabo9rm@gmail.com</a> · <a href="https://github.com/GaboRM9">github.com/GaboRM9</a></footer>
 </div>
 
 <script>
 // scripted demos: reveal [data-t] elements at their ms offset, loop, run only while on screen
 document.querySelectorAll('.demo[data-loop]').forEach(d=>{
-  const els=[...d.querySelectorAll('[data-t]')];let timers=[],run=false;
+  const els=[...d.querySelectorAll('[data-t]')],xs=[...d.querySelectorAll('[data-x]')];let timers=[],run=false;
+  const T=(f,ms)=>timers.push(setTimeout(f,ms));
   const play=()=>{
-    els.forEach(e=>e.classList.remove('on'));
-    timers=els.map(e=>setTimeout(()=>e.classList.add('on'),+e.dataset.t));
-    timers.push(setTimeout(()=>run&&play(),+d.dataset.loop));
+    els.forEach(e=>e.classList.remove('on'));xs.forEach(e=>e.classList.remove('gone'));
+    els.forEach(e=>T(()=>e.classList.add('on'),+e.dataset.t));
+    xs.forEach(e=>T(()=>e.classList.add('gone'),+e.dataset.x));
+    const ap=d.querySelector('[data-ap]');if(ap){T(()=>ap.classList.add('press'),4800);T(()=>ap.classList.remove('press'),5100)}
+    const fc=d.querySelector('#fl-chat'),fs=d.querySelector('#fl-skills');
+    if(fc){fc.classList.add('on');fs.classList.remove('on');T(()=>{fc.classList.remove('on');fs.classList.add('on')},6000)}
+    T(()=>run&&play(),+d.dataset.loop);
   };
   new IntersectionObserver(([en])=>{
     if(en.isIntersecting&&!run){run=true;play()}
