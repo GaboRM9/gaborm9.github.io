@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>gabo · AI agents &amp; full-stack</title>
 <meta name="description" content="Portfolio of Gabo: AI agents, MCP, Claude, TypeScript, Next.js.">
+<meta property="og:title" content="gabo · I build agents that do real work">
+<meta property="og:description" content="Agent workspaces, MCP tools, forecasting. Projects, architecture and write-ups.">
+<meta property="og:image" content="https://gaborm9.github.io/og.png">
+<meta property="og:url" content="https://gaborm9.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
@@ -75,6 +80,18 @@ svg text{font-family:var(--mono);font-size:10px;fill:var(--fg)}
 .seq b.h{background:#555}.seq b.p{outline:2px solid var(--a)}.seq b.h.p{background:var(--a)}
 .stack{display:flex;flex-wrap:wrap;gap:10px}
 .stack span{border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:10px;font-family:var(--mono);font-size:.8rem}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--mono);font-size:.8rem}
+.flow span{border:1px solid var(--line);background:var(--card);padding:8px 12px;border-radius:10px}
+.flow .gate{border-color:#fff;background:#ffffff14}.flow i{color:var(--mute);font-style:normal}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.box{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:16px 18px}
+.box b{display:block;margin-bottom:4px}.box p{margin:0;color:var(--mute);font-size:.9rem}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-top:14px}
+.nums div{border-top:1px solid var(--line);padding-top:10px;color:var(--mute);font-size:.85rem}
+.nums strong{display:block;color:var(--fg);font-size:1.8rem;letter-spacing:-.03em;font-family:var(--sans)}
+.posts a{display:block;padding:16px 0;border-top:1px solid var(--line);text-decoration:none}
+.posts a:hover b{text-decoration:underline}.posts span{display:block;color:var(--mute);font-size:.9rem}
+.also{color:var(--mute);font-size:.95rem;margin-top:26px}.also a{color:var(--fg)}
 footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--mute);text-align:center}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-t]{opacity:1;transform:none}.bar{width:var(--w)}.type{width:auto}}
 </style>
@@ -84,9 +101,9 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <nav><b>gabo@orbz:~$</b><span><a href="#work">work</a><a href="#stack">stack</a><a href="mailto:gabo9rm@gmail.com">contact</a></span></nav>
 
 <header class="hero">
-<span class="tag">● open to AI-agent work</span>
+<span class="tag">● currently building orbz</span>
 <h1>I build <em>agents</em><br>that do real work.</h1>
-<p class="lead">Full-stack engineer. LLM tools, MCP servers, forecasting, creative code. TypeScript to the bone, with approvals, tests and READMEs.</p>
+<p class="lead">Full-stack engineer shipping LLM agents with tool use, human approvals and run logs. Next.js, MCP, Claude.</p>
 <div class="cta"><a class="btn p" href="#work">See the work ↓</a><a class="btn" href="https://github.com/GaboRM9">GitHub</a><a class="btn" href="mailto:gabo9rm@gmail.com">Email me</a></div>
 </header>
 
@@ -156,18 +173,28 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <div class="chips"><span>Claude Code</span><span>skills</span><span>MIT</span></div>
 <div class="links"><a href="https://github.com/GaboRM9/gab0-claude-toolkit">source →</a></div></div></article>
 
-<article class="card"><div class="demo"><div class="stage" style="display:grid;place-items:end center;padding:0"><div class="city" id="city"></div></div></div>
-<div class="info"><h3>terminal-city</h3><p>A living skyline drawn in your terminal. Windows flicker, the city never sleeps.</p>
-<div class="chips"><span>TypeScript</span><span>ASCII</span><span>CLI</span></div>
-<div class="links"><a href="https://github.com/GaboRM9/terminal-city">source →</a></div></div></article>
-
-<article class="card"><div class="demo"><div class="stage" style="display:grid;align-content:center">
-<div class="seq" id="seq"></div><div class="mute" style="margin-top:12px">♪ <span class="g">sonidito.8bit</span> · 120 bpm · square wave</div></div></div>
-<div class="info"><h3>sonidito.8bit</h3><p>A web MIDI player with Pocket Operator-style animations. Drop in a file and watch it play on a chunky grid.</p>
-<div class="chips"><span>TypeScript</span><span>Web MIDI</span><span>8-bit</span></div>
-<div class="links"><a href="https://github.com/GaboRM9/sonidito.8bit">source →</a></div></div></article>
-
 </section>
+
+<p class="also">Also built for fun: <a href="https://github.com/GaboRM9/terminal-city">terminal-city</a> (a living ASCII skyline) and <a href="https://github.com/GaboRM9/sonidito.8bit">sonidito.8bit</a> (8-bit web MIDI player).</p>
+
+<h2 id="how">how orbz works</h2>
+<div class="flow"><span>user message</span><i>→</i><span>auth + agent config</span><i>→</i><span>Claude</span><i>→</i><span>tool call</span><i>→</i><span class="gate">approval gate</span><i>→</i><span>execute</span><i>→</i><span>run log</span></div>
+<p style="color:var(--mute);margin-top:14px">Read-only tools run straight away. Anything that talks to the outside world (every MCP tool, <code>fetchUrl</code>, <code>createSkill</code>) stops and asks you in the chat. Each request is one run: model, tokens, timings, every tool call and every approve or deny land in SQLite and show up in a Runs tab. <a href="https://github.com/GaboRM9/orbz#how-it-works" style="color:var(--fg)">Diagram and code →</a></p>
+
+<h2>safety by design</h2>
+<div class="cols">
+<div class="box"><b>Approval gate</b><p>Side-effecting tools wait for an explicit approve or deny. The decision is logged once and can't be replayed.</p></div>
+<div class="box"><b>SSRF-safe fetch</b><p>Public hosts only. Every resolved IP is checked, redirects are re-validated per hop, body capped, 8s timeout.</p></div>
+<div class="box"><b>Untrusted tool output</b><p>The model is told that MCP output is data, never instructions. A dead server is skipped, never fatal.</p></div>
+<div class="box"><b>Fails closed</b><p>No password configured means nobody gets in. HMAC sessions, constant-time compare, auth re-checked in every server action.</p></div>
+</div>
+<div class="nums"><div><strong>8</strong>max steps per run</div><div><strong>3</strong>redirect hops allowed</div><div><strong>64 KB</strong>fetch body cap</div><div><strong>8 s</strong>tool and MCP timeout</div><div><strong>8</strong>generative UI tools</div><div><strong>13</strong>tests in CI</div></div>
+
+<h2>writing</h2>
+<div class="posts">
+<a href="posts/approval-gates.html"><b>Approval gates for agents: ask before the side effect</b><span>How orbz decides which tool calls need a human, and how decisions are logged.</span></a>
+<a href="posts/ssrf-safe-fetch.html"><b>Giving an agent a fetch tool without opening your network</b><span>The SSRF checks behind a fetchUrl tool, and the one gap I left open on purpose.</span></a>
+</div>
 
 <h2 id="stack">stack</h2>
 <div class="stack"><span>TypeScript</span><span>Next.js</span><span>React</span><span>Vue 3</span><span>Node / Express</span><span>Prisma</span><span>Postgres + pgvector</span><span>Claude / Anthropic</span><span>Vercel AI SDK</span><span>MCP</span><span>RAG</span><span>Stripe</span><span>Docker</span><span>Python</span></div>
@@ -189,26 +216,6 @@ document.querySelectorAll('.demo[data-loop]').forEach(d=>{
     else if(!en.isIntersecting){run=false;timers.forEach(clearTimeout)}
   }).observe(d);
 });
-// terminal-city: random skyline, flickering windows
-(()=>{
-  const el=document.getElementById('city'),W=44,bs=[];let x=0;
-  while(x<W){const w=4+Math.floor(Math.random()*4);bs.push([x,w,4+Math.floor(Math.random()*9)]);x+=w+1}
-  const draw=()=>{
-    let out='';
-    for(let y=13;y>=0;y--){const row=Array(W).fill(' ');
-      bs.forEach(([x,w,h])=>{if(y<h)for(let i=0;i<w&&x+i<W;i++)
-        row[x+i]=(i===0||i===w-1||y===h-1)?'█':(Math.random()<.35?'<i>▪</i>':'▒')});
-      out+=row.join('')+'\n'}
-    el.innerHTML=out+'▀'.repeat(W);
-  };draw();setInterval(draw,700);
-})();
-// sonidito: step sequencer playhead
-(()=>{
-  const s=document.getElementById('seq');
-  for(let i=0;i<64;i++){const b=document.createElement('b');if(Math.random()<.28)b.className='h';s.append(b)}
-  const c=[...s.children];let t=0;
-  setInterval(()=>{c.forEach((b,i)=>b.classList.toggle('p',i%16===t));t=(t+1)%16},250);
-})();
 </script>
 </body>
 </html>
