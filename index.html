@@ -4,29 +4,211 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>gabo · AI agents &amp; full-stack</title>
-<meta name="description" content="Full-stack engineer building AI agents. TypeScript, Next.js, MCP, Claude.">
+<meta name="description" content="Portfolio of Gabo: AI agents, MCP, Claude, TypeScript, Next.js.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-:root{--bg:#fff;--fg:#111;--mute:#666;--line:#e5e5e5}
-@media(prefers-color-scheme:dark){:root{--bg:#0d0d0d;--fg:#eee;--mute:#999;--line:#262626}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 ui-sans-serif,system-ui,sans-serif}
-main{max-width:640px;margin:0 auto;padding:64px 16px}
-h1{font-size:2rem;margin:0}h2{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin:48px 0 8px}
-p{margin:.5rem 0;color:var(--mute)}a{color:inherit}
-.p{display:block;padding:14px 0;border-top:1px solid var(--line);text-decoration:none}
-.p:hover b{text-decoration:underline}.p span{display:block;color:var(--mute);font-size:.9rem}
+:root{--bg:#07070b;--card:#0f0f16;--line:#1f1f2c;--fg:#ececf3;--mute:#8a8aa0;--a:#b6ff3c;--b:#7c5cff;--c:#ff5c93;
+--mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Space Grotesk',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--sans);
+background-image:radial-gradient(800px 400px at 80% -5%,#7c5cff22,transparent),radial-gradient(600px 400px at 0% 10%,#b6ff3c14,transparent),
+linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+background-size:auto,auto,56px 56px,56px 56px;background-attachment:fixed}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-family:var(--mono);font-size:.85rem}
+nav a{text-decoration:none;color:var(--mute);margin-left:20px}nav a:hover{color:var(--a)}
+.hero{padding:90px 0 60px}
+.tag{font-family:var(--mono);font-size:.8rem;color:var(--a);border:1px solid #b6ff3c40;border-radius:99px;padding:4px 12px;display:inline-block}
+h1{font-size:clamp(2.6rem,8vw,5.6rem);line-height:1;letter-spacing:-.04em;margin:22px 0 18px;font-weight:700}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--a),var(--b) 60%,var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:560px;color:var(--mute);font-size:1.15rem}
+.cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:.85rem;text-decoration:none;padding:10px 18px;border-radius:10px;border:1px solid var(--line);transition:.2s}
+.btn.p{background:var(--a);color:#000;border-color:var(--a);font-weight:600}
+.btn:hover{transform:translateY(-2px);border-color:var(--a)}
+h2{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:70px 0 22px;font-weight:400}
+h2::before{content:"// ";color:var(--a)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,480px),1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.card:hover{border-color:#7c5cff80;transform:translateY(-4px);box-shadow:0 20px 60px -20px #7c5cff55}
+.card.big{grid-column:1/-1}
+.demo{height:250px;background:#0a0a10;border-bottom:1px solid var(--line);position:relative;overflow:hidden;font-family:var(--mono);font-size:.75rem}
+.demo::before{content:"";position:absolute;top:0;left:0;right:0;height:26px;background-color:#12121b;border-bottom:1px solid var(--line);
+background-image:radial-gradient(circle,#ff5f57 4px,transparent 5px),radial-gradient(circle,#febc2e 4px,transparent 5px),radial-gradient(circle,#28c840 4px,transparent 5px);
+background-size:14px 14px;background-repeat:no-repeat;background-position:10px 6px,26px 6px,42px 6px;z-index:2}
+.stage{position:absolute;inset:26px 0 0 0;padding:14px}
+.info{padding:18px 20px 20px}
+.info h3{margin:0;font-size:1.35rem;letter-spacing:-.02em}
+.info p{margin:6px 0 14px;color:var(--mute);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chips span{font-family:var(--mono);font-size:.7rem;padding:2px 9px;border-radius:99px;background:#ffffff0d;color:var(--mute)}
+.links a{font-family:var(--mono);font-size:.8rem;color:var(--a);text-decoration:none;margin-right:16px}
+.links a:hover{text-decoration:underline}
+[data-t]{opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s}
+[data-t].on{opacity:1;transform:none}
+.mute{color:var(--mute)}.g{color:var(--a)}.v{color:#a58bff}.r{color:var(--c)}
+.type{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:0}
+.type.on{animation:ty 1.2s steps(var(--n)) forwards}
+@keyframes ty{to{width:calc(var(--n)*1ch)}}
+.cur::after{content:"▌";color:var(--a);animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.bar{height:8px;border-radius:4px;background:linear-gradient(90deg,var(--b),var(--a));width:0;flex:none;transition:opacity .35s,transform .35s,width 1s cubic-bezier(.2,.8,.2,1)}
+.bar.on{width:var(--w)}
+.row{display:flex;align-items:center;gap:10px;margin:9px 0}.row span:first-child{width:96px;color:var(--mute)}
+.bub{padding:7px 11px;border-radius:10px;background:#1a1a26;display:inline-block;margin:3px 0}
+.bub.me{background:#7c5cff33;float:right}
+.clr{clear:both}
+.appr{border:1px solid #febc2e66;background:#febc2e10;border-radius:10px;padding:10px;margin-top:6px}
+.ok{display:inline-block;padding:3px 12px;border-radius:6px;background:#2a2a38;margin-top:6px;transition:.3s}
+.ok.on{background:var(--a);color:#000}
+.chip{display:inline-block;padding:4px 10px;border-radius:99px;margin:3px;border:1px solid var(--b);color:#c9bcff;background:#7c5cff1a}
+.in{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#0f0f16;margin-bottom:10px}
+svg text{font-family:var(--mono);font-size:10px;fill:var(--fg)}
+.node{fill:#14141f;stroke:#2c2c40}
+.city{white-space:pre;line-height:1.05;font-size:11px;color:#3a3a52;letter-spacing:.1em}
+.city i{font-style:normal;color:#ffd24d;text-shadow:0 0 6px #ffd24d}
+.seq{display:grid;grid-template-columns:repeat(16,1fr);gap:4px}
+.seq b{aspect-ratio:1;border-radius:3px;background:#1a1a26}
+.seq b.h{background:#5a4bb3}.seq b.p{outline:2px solid var(--a)}.seq b.h.p{background:var(--a)}
+.stack{display:flex;flex-wrap:wrap;gap:10px}
+.stack span{border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:10px;font-family:var(--mono);font-size:.8rem}
+footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--mute);text-align:center}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-t]{opacity:1;transform:none}.bar{width:var(--w)}.type{width:auto}}
 </style>
 </head>
-<body><main>
-<h1>gabo</h1>
-<p>Full-stack engineer building AI agents and the tools around them. TypeScript, Next.js, Vercel AI SDK, MCP, Claude.</p>
-<p><a href="mailto:gabo9rm@gmail.com">gabo9rm@gmail.com</a> · <a href="https://github.com/GaboRM9">GitHub</a></p>
-<h2>Projects</h2>
-<a class="p" href="https://openfuture.wtf"><b>OpenFuture</b><span>Topic in, probabilistic forecast out. An agent browses the live web.</span></a>
-<a class="p" href="https://github.com/GaboRM9/fl0u"><b>fl0u</b><span>Build and run AI agents: flow editor, RAG, webhooks. Vue, Express, pgvector.</span></a>
-<a class="p" href="https://github.com/GaboRM9/orbz"><b>orbz</b><span>Agent workspace with approvals, tool calls and run history.</span></a>
-<a class="p" href="https://github.com/GaboRM9/hyp3rT4rget"><b>hyp3rT4rget</b><span>Audience strategy from a product URL. Gemini, multi-tenant, Stripe.</span></a>
-<a class="p" href="https://github.com/GaboRM9/gab0-claude-toolkit"><b>gab0-claude-toolkit</b><span>Claude Code slash commands I use daily.</span></a>
-<a class="p" href="https://github.com/GaboRM9/terminal-city"><b>terminal-city</b><span>A city in your terminal.</span></a>
-<a class="p" href="https://github.com/GaboRM9/sonidito.8bit"><b>sonidito.8bit</b><span>8-bit web MIDI player with Pocket Operator-style animations.</span></a>
-</main></body>
+<body>
+<div class="wrap">
+<nav><b>gabo@orbz:~$</b><span><a href="#work">work</a><a href="#stack">stack</a><a href="mailto:gabo9rm@gmail.com">contact</a></span></nav>
+
+<header class="hero">
+<span class="tag">● open to AI-agent work</span>
+<h1>I build <em>agents</em><br>that do real work.</h1>
+<p class="lead">Full-stack engineer. LLM tools, MCP servers, forecasting, creative code. TypeScript to the bone, with approvals, tests and READMEs.</p>
+<div class="cta"><a class="btn p" href="#work">See the work ↓</a><a class="btn" href="https://github.com/GaboRM9">GitHub</a><a class="btn" href="mailto:gabo9rm@gmail.com">Email me</a></div>
+</header>
+
+<h2 id="work">selected work</h2>
+<section class="grid">
+
+<article class="card big"><div class="demo" data-loop="10000"><div class="stage">
+<div class="bub me" data-t="300">Archive last week's tickets and email me a summary</div><div class="clr"></div>
+<div data-t="1500" class="mute">▸ <span class="v">search_tickets</span>(range: "7d") <span class="g">→ 42 results</span></div>
+<div data-t="2600" class="mute">▸ <span class="v">send_email</span>(to: "gabo") <span class="r">needs approval</span></div>
+<div class="appr" data-t="3400">Allow <b>send_email</b> to gabo9rm@gmail.com?<br><span class="ok" data-t="5200">Approve</span></div>
+<div data-t="6600" class="g" style="margin-top:8px">✓ Sent. 42 tickets archived. Run saved to history.</div>
+</div></div>
+<div class="info"><h3>orbz</h3><p>Agent workspace where every risky tool call waits for a human. Streaming chat, MCP tools, approvals, run history.</p>
+<div class="chips"><span>Next.js 16</span><span>AI SDK 7</span><span>MCP</span><span>Claude</span><span>SQLite</span></div>
+<div class="links"><a href="https://github.com/GaboRM9/orbz">source →</a></div></div></article>
+
+<article class="card"><div class="demo" data-loop="9000"><div class="stage">
+<div class="in"><span class="mute">topic&gt;</span> <span class="type" data-t="200" style="--n:22">EU battery supply 2030</span></div>
+<div data-t="1700" class="mute">browsing 38 sources…</div>
+<div class="row" data-t="2300"><span>Scenario A</span><div class="bar" data-t="2400" style="--w:62%"></div><span class="g">62%</span></div>
+<div class="row" data-t="2800"><span>Scenario B</span><div class="bar" data-t="2900" style="--w:27%"></div><span class="g">27%</span></div>
+<div class="row" data-t="3300"><span>Wild card</span><div class="bar" data-t="3400" style="--w:8%"></div><span class="g">8%</span></div>
+<div data-t="4500" class="mute">confidence: <span class="g">medium</span> · counterargument steelmanned</div>
+</div></div>
+<div class="info"><h3>OpenFuture</h3><p>Give it a topic. It browses the live web and returns a probabilistic forecast with scenarios, wild cards and counterarguments.</p>
+<div class="chips"><span>TypeScript</span><span>Claude</span><span>web research</span></div>
+<div class="links"><a href="https://openfuture.wtf">live →</a><a href="https://github.com/GaboRM9/OpenFuture">source →</a></div></div></article>
+
+<article class="card"><div class="demo"><div class="stage">
+<svg viewBox="0 0 440 190" width="100%" height="100%">
+<path id="flow" d="M60 95H300L380 50" stroke="#2c2c40" fill="none" stroke-width="2"/>
+<path d="M300 95L380 140" stroke="#2c2c40" fill="none" stroke-width="2"/>
+<rect class="node" x="20" y="75" width="80" height="40" rx="8"/><text x="38" y="99">webhook</text>
+<rect class="node" x="150" y="75" width="80" height="40" rx="8"/><text x="176" y="99">LLM</text>
+<rect class="node" x="270" y="75" width="60" height="40" rx="8"/><text x="288" y="99">RAG</text>
+<rect class="node" x="340" y="30" width="80" height="40" rx="8"/><text x="362" y="54">slack</text>
+<rect class="node" x="340" y="120" width="80" height="40" rx="8"/><text x="362" y="144">email</text>
+<circle r="5" fill="#b6ff3c"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#flow"/></animateMotion></circle>
+</svg></div></div>
+<div class="info"><h3>fl0u</h3><p>One surface to build, run and manage AI agents: visual flow editor, knowledge base (RAG), integrations and webhooks.</p>
+<div class="chips"><span>Vue 3</span><span>Express</span><span>Prisma</span><span>pgvector</span><span>pnpm monorepo</span></div>
+<div class="links"><a href="https://github.com/GaboRM9/fl0u">source →</a></div></div></article>
+
+<article class="card"><div class="demo" data-loop="8000"><div class="stage">
+<div class="in"><span class="mute">url&gt;</span> <span class="type" data-t="200" style="--n:25">https://sneakers.shop/air</span></div>
+<div data-t="1700" class="mute">analyzing product, competitors, culture…</div>
+<div data-t="2400" style="margin-top:8px" class="mute">micro-tribes</div>
+<div data-t="2700"><span class="chip">#sneakerheads · 18-24</span><span class="chip">#runclub · 25-34</span></div>
+<div data-t="3300"><span class="chip">#streetwear collectors</span><span class="chip">#gen-z thrifters</span></div>
+<div data-t="3900"><span class="chip">#marathon dads</span></div>
+</div></div>
+<div class="info"><h3>hyp3rT4rget</h3><p>Paste a product URL, get hyper-targeted audience segments. Multi-tenant SaaS with JWT, Stripe plans and API keys.</p>
+<div class="chips"><span>React</span><span>Express</span><span>Gemini</span><span>Stripe</span></div>
+<div class="links"><a href="https://github.com/GaboRM9/hyp3rT4rget">source →</a></div></div></article>
+
+<article class="card"><div class="demo" data-loop="8000"><div class="stage">
+<div><span class="g">❯</span> <span class="type" data-t="200" style="--n:33">/forecast "interest rates next 12mo"</span></div>
+<div data-t="1700" class="mute">⠋ researching live sources</div>
+<div data-t="2500" class="v">## Forecast</div>
+<div data-t="2900">• Base case <span class="g">55%</span>: two cuts by Q3</div>
+<div data-t="3300">• Hawkish <span class="g">30%</span>: sticky inflation</div>
+<div data-t="3700">• Tail risk <span class="r">15%</span>: credit event</div>
+<div data-t="4300" class="mute cur">cp skills/forecast/SKILL.md ~/.claude/commands/ </div>
+</div></div>
+<div class="info"><h3>gab0-claude-toolkit</h3><p>Slash commands for Claude Code that give it a focused persona, live tools and structured output. Used daily.</p>
+<div class="chips"><span>Claude Code</span><span>skills</span><span>MIT</span></div>
+<div class="links"><a href="https://github.com/GaboRM9/gab0-claude-toolkit">source →</a></div></div></article>
+
+<article class="card"><div class="demo"><div class="stage" style="display:grid;place-items:end center;padding:0"><div class="city" id="city"></div></div></div>
+<div class="info"><h3>terminal-city</h3><p>A living skyline drawn in your terminal. Windows flicker, the city never sleeps.</p>
+<div class="chips"><span>TypeScript</span><span>ASCII</span><span>CLI</span></div>
+<div class="links"><a href="https://github.com/GaboRM9/terminal-city">source →</a></div></div></article>
+
+<article class="card"><div class="demo"><div class="stage" style="display:grid;align-content:center">
+<div class="seq" id="seq"></div><div class="mute" style="margin-top:12px">♪ <span class="g">sonidito.8bit</span> · 120 bpm · square wave</div></div></div>
+<div class="info"><h3>sonidito.8bit</h3><p>A web MIDI player with Pocket Operator-style animations. Drop in a file and watch it play on a chunky grid.</p>
+<div class="chips"><span>TypeScript</span><span>Web MIDI</span><span>8-bit</span></div>
+<div class="links"><a href="https://github.com/GaboRM9/sonidito.8bit">source →</a></div></div></article>
+
+</section>
+
+<h2 id="stack">stack</h2>
+<div class="stack"><span>TypeScript</span><span>Next.js</span><span>React</span><span>Vue 3</span><span>Node / Express</span><span>Prisma</span><span>Postgres + pgvector</span><span>Claude / Anthropic</span><span>Vercel AI SDK</span><span>MCP</span><span>RAG</span><span>Stripe</span><span>Docker</span><span>Python</span></div>
+
+<footer>demos are looping simulations of each project · hand-built, no framework<br><a href="mailto:gabo9rm@gmail.com">gabo9rm@gmail.com</a> · <a href="https://github.com/GaboRM9">github.com/GaboRM9</a></footer>
+</div>
+
+<script>
+// scripted demos: reveal [data-t] elements at their ms offset, loop, run only while on screen
+document.querySelectorAll('.demo[data-loop]').forEach(d=>{
+  const els=[...d.querySelectorAll('[data-t]')];let timers=[],run=false;
+  const play=()=>{
+    els.forEach(e=>e.classList.remove('on'));
+    timers=els.map(e=>setTimeout(()=>e.classList.add('on'),+e.dataset.t));
+    timers.push(setTimeout(()=>run&&play(),+d.dataset.loop));
+  };
+  new IntersectionObserver(([en])=>{
+    if(en.isIntersecting&&!run){run=true;play()}
+    else if(!en.isIntersecting){run=false;timers.forEach(clearTimeout)}
+  }).observe(d);
+});
+// terminal-city: random skyline, flickering windows
+(()=>{
+  const el=document.getElementById('city'),W=44,bs=[];let x=0;
+  while(x<W){const w=4+Math.floor(Math.random()*4);bs.push([x,w,4+Math.floor(Math.random()*9)]);x+=w+1}
+  const draw=()=>{
+    let out='';
+    for(let y=13;y>=0;y--){const row=Array(W).fill(' ');
+      bs.forEach(([x,w,h])=>{if(y<h)for(let i=0;i<w&&x+i<W;i++)
+        row[x+i]=(i===0||i===w-1||y===h-1)?'█':(Math.random()<.35?'<i>▪</i>':'▒')});
+      out+=row.join('')+'\n'}
+    el.innerHTML=out+'▀'.repeat(W);
+  };draw();setInterval(draw,700);
+})();
+// sonidito: step sequencer playhead
+(()=>{
+  const s=document.getElementById('seq');
+  for(let i=0;i<64;i++){const b=document.createElement('b');if(Math.random()<.28)b.className='h';s.append(b)}
+  const c=[...s.children];let t=0;
+  setInterval(()=>{c.forEach((b,i)=>b.classList.toggle('p',i%16===t));t=(t+1)%16},250);
+})();
+</script>
+</body>
 </html>
