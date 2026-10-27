@@ -13,10 +13,10 @@ pre{background:var(--card);border:1px solid var(--line);border-radius:12px;paddi
 code{font-family:ui-monospace,monospace;font-size:.9em;background:var(--card);padding:1px 6px;border-radius:5px}pre code{background:none;padding:0}
 </style></head><body><main>
 <a class="back" href="../">← gabo</a>
-<h1>Giving an agent a fetch tool without opening your network</h1><div class="meta">October 25, 2026 · from the orbz codebase</div>
+<h1>Giving an agent a fetch tool without opening your network</h1><div class="meta">October 25, 2026 · from the orb codebase</div>
 <p>A <code>fetchUrl</code> tool looks harmless: take a URL, return some text. But the URL comes from a model, and the model reads untrusted pages. A malicious page can tell it to fetch <code>http://169.254.169.254/</code> (cloud metadata) or something on your internal network. That is server-side request forgery (SSRF).</p>
 <h2>Check the address, not the string</h2>
-<p>Blocking the text "localhost" is useless: <code>127.0.0.1</code>, <code>[::ffff:127.0.0.1]</code> (which URL parsers normalize to <code>::ffff:7f00:1</code>) and any hostname that resolves to a private IP all get through. orbz resolves the host and checks <i>every</i> address it returns:</p>
+<p>Blocking the text "localhost" is useless: <code>127.0.0.1</code>, <code>[::ffff:127.0.0.1]</code> (which URL parsers normalize to <code>::ffff:7f00:1</code>) and any hostname that resolves to a private IP all get through. orb resolves the host and checks <i>every</i> address it returns:</p>
 <ul>
 <li>IPv4: 0/8, 10/8, 127/8, 100.64/10 (CGNAT), 169.254/16 (link-local and metadata), 172.16/12, 192.168/16, 198.18/15, multicast and above.</li>
 <li>IPv6: loopback, unique-local, link-local, multicast, plus IPv4-mapped, IPv4-compatible and NAT64 forms that smuggle a v4 address inside.</li>
@@ -30,5 +30,5 @@ code{font-family:ui-monospace,monospace;font-size:.9em;background:var(--card);pa
 <p>DNS can change between the check and the connection (rebinding). The fix is to pin the resolved IP in a custom dispatcher. I left a comment in the code instead of building it, because the fetch tool is also behind an approval gate. If this ran unattended, I'd close that gap first.</p>
 <h2>Test it like an attacker</h2>
 <p>The test suite checks private, loopback, metadata and mapped IPv6 addresses. Redirect handling is not covered by a test yet, which is the next thing I would add.</p>
-<p style="margin-top:3em;color:var(--mute)">Code: <a href="https://github.com/GaboRM9/orbz">github.com/GaboRM9/orbz</a></p>
+<p style="margin-top:3em;color:var(--mute)">Code: <a href="https://github.com/GaboRM9/orb">github.com/GaboRM9/orb</a></p>
 </main></body></html>

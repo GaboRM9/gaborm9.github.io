@@ -98,22 +98,22 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 .skin{position:absolute;inset:26px 0 0 0;display:flex;font-size:12.5px;line-height:1.5}
 .pane{position:absolute;inset:0;transition:opacity .4s}.pane.gone{opacity:0;pointer-events:none}
 [data-x]{transition:opacity .4s}[data-x].gone{opacity:0}
-.s-orbz{background:#000;color:#fff;font-family:'Geist',system-ui,sans-serif;--line:#262626;--mute:#a3a3a3}
-.s-orbz aside{width:168px;border-right:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:3px}
-.s-orbz .logo{font:300 14px 'Geist Mono',monospace;letter-spacing:.3em;margin:0 6px 18px;display:flex;gap:8px;align-items:center}
-.s-orbz .logo i{width:14px;height:14px;border-radius:50%;border:1px solid #fff;display:block}
-.s-orbz .ni{padding:5px 10px;color:var(--mute);border-left:1px solid transparent}.s-orbz .ni.on{color:#fff;border-color:#fff}
-.s-orbz .rec{margin:16px 0 4px 10px;color:var(--mute);font-size:11px}
-.s-orbz .main{flex:1;padding:0 22px;display:flex;flex-direction:column;overflow:hidden}
-.s-orbz header{display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:10px 0}
-.s-orbz .av{width:26px;height:26px;border-radius:50%;background:#1a1a1a;border:1px solid var(--line);display:grid;place-items:center;font-size:11px}
-.s-orbz .u{align-self:flex-end;border:1px solid var(--line);border-radius:6px;padding:5px 10px;margin-top:12px;max-width:85%}
-.s-orbz .tl{color:var(--mute);font-size:11.5px;margin-top:9px}
-.s-orbz .ap{border:1px solid var(--line);border-radius:6px;padding:11px 12px;margin-top:9px}
-.s-orbz .ap small{color:var(--mute);font-size:11px;display:block}
-.s-orbz .b{display:inline-block;border:1px solid var(--line);border-radius:4px;padding:3px 12px;margin:8px 6px 0 0;transition:.3s}
-.s-orbz .b.solid{background:#fff;color:#000;border-color:#fff}.s-orbz .b.press{transform:scale(.94);opacity:.7}
-.s-orbz .agent{color:var(--mute);font-size:11px}
+.s-orb{background:#000;color:#fff;font-family:'Geist',system-ui,sans-serif;--line:#262626;--mute:#a3a3a3}
+.s-orb aside{width:168px;border-right:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:3px}
+.s-orb .logo{font:300 14px 'Geist Mono',monospace;letter-spacing:.3em;margin:0 6px 18px;display:flex;gap:8px;align-items:center}
+.s-orb .logo i{width:14px;height:14px;border-radius:50%;border:1px solid #fff;display:block}
+.s-orb .ni{padding:5px 10px;color:var(--mute);border-left:1px solid transparent}.s-orb .ni.on{color:#fff;border-color:#fff}
+.s-orb .rec{margin:16px 0 4px 10px;color:var(--mute);font-size:11px}
+.s-orb .main{flex:1;padding:0 22px;display:flex;flex-direction:column;overflow:hidden}
+.s-orb header{display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:10px 0}
+.s-orb .av{width:26px;height:26px;border-radius:50%;background:#1a1a1a;border:1px solid var(--line);display:grid;place-items:center;font-size:11px}
+.s-orb .u{align-self:flex-end;border:1px solid var(--line);border-radius:6px;padding:5px 10px;margin-top:12px;max-width:85%}
+.s-orb .tl{color:var(--mute);font-size:11.5px;margin-top:9px}
+.s-orb .ap{border:1px solid var(--line);border-radius:6px;padding:11px 12px;margin-top:9px}
+.s-orb .ap small{color:var(--mute);font-size:11px;display:block}
+.s-orb .b{display:inline-block;border:1px solid var(--line);border-radius:4px;padding:3px 12px;margin:8px 6px 0 0;transition:.3s}
+.s-orb .b.solid{background:#fff;color:#000;border-color:#fff}.s-orb .b.press{transform:scale(.94);opacity:.7}
+.s-orb .agent{color:var(--mute);font-size:11px}
 .s-of{background:#080808;color:#f0f0f0;font:12px/1.55 'Geist Mono',monospace;flex-direction:column;padding:12px}
 .s-of .box{border:1px solid #272727;background:#0e0e0e;flex:1;display:flex;flex-direction:column;overflow:hidden}
 .s-of .bar2{display:flex;justify-content:space-between;gap:8px;padding:6px 10px;border-bottom:1px solid #272727;background:#080808;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:#737373;white-space:nowrap;overflow:hidden}
@@ -153,8 +153,8 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 .skin{transition:opacity .5s}.skin.fade{opacity:0}
 .grid>*,.card,.demo,.info{min-width:0}html,body{overflow-x:hidden}
 @media(max-width:640px){
- .s-orbz aside,.s-fl aside,.s-fl .list{display:none}
- .s-orbz .main{padding:0 14px}.s-hy{padding:12px}
+ .s-orb aside,.s-fl aside,.s-fl .list{display:none}
+ .s-orb .main{padding:0 14px}.s-hy{padding:12px}
  .demo.tall{height:360px}.card.big .demo.tall{height:430px}
  .s-sk{font-size:10.5px}.s-of .tl2{display:none}.s-of table{font-size:10px}
  .hero{padding:50px 0 30px}.nums{grid-template-columns:repeat(2,1fr)}
@@ -170,6 +170,13 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 .gb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:14px}
 .gb{display:flex;flex-direction:column;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:10px 10px 14px;text-decoration:none;transition:.2s;text-align:center;font-size:.8rem;color:var(--mute)}
 .gb img{width:100%;aspect-ratio:672/352;object-fit:contain}
+.s-fl .cv{flex:1;position:relative;min-width:0;background:#fff;background-image:radial-gradient(#e4e4e7 1px,transparent 1px);background-size:16px 16px;display:flex;flex-direction:column}
+.s-fl .cv .ct{padding:10px 14px 0;font-weight:500;font-size:12.5px}.s-fl .cv svg{flex:1;min-height:0;width:100%}
+.s-fl svg text{font-family:ui-sans-serif,system-ui,sans-serif}.s-fl svg .t1{font-size:11px;font-weight:500;fill:#0a0a0b}.s-fl svg .t2{font-size:8.5px;fill:#71717a}.s-fl svg .t3{font-size:11px;fill:#52525b}
+/* only the flow diagram animates: the other previews are static final frames */
+.demo [data-t]{opacity:1;transform:none;transition:none}.demo [data-x]{display:none}
+.demo .type{width:auto;animation:none}.demo .scan::after,.demo .blink{animation:none}
+.s-hy .cb i{width:100%;opacity:.9}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-t]{opacity:1;transform:none}.bar{width:var(--w)}.type{width:auto}}
 </style>
 </head>
@@ -178,7 +185,7 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <nav><span><a href="#work">work</a><a href="#stack">stack</a><a href="mailto:gabo9rm@gmail.com">contact</a></span></nav>
 
 <header class="hero">
-<span class="tag">● currently building orbz</span>
+<span class="tag">● currently building orb</span>
 <div class="hero-top"><div><div class="name">Gabriel Rodriguez</div>
 <h1><em>AI</em> Engineer</h1></div>
 <img class="avatar" src="avatar.png" alt="Pixel-art portrait of Gabriel" width="200" height="200"></div>
@@ -189,8 +196,8 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <h2 id="work">selected work</h2>
 <section class="grid">
 
-<article class="card big"><div class="demo tall" data-loop="12000"><div class="skin s-orbz">
-<aside><div class="logo"><i></i>orbz</div><div class="ni">Chat</div><div class="ni on">Agents</div><div class="ni">Skills</div><div class="ni">Settings</div><div class="rec">Recent</div><div class="ni" style="padding:3px 10px">Docs digest</div><div class="ni" style="padding:3px 10px">Launch checklist</div></aside>
+<article class="card big"><div class="demo tall"><div class="skin s-orb">
+<aside><div class="logo"><i></i>orb</div><div class="ni">Chat</div><div class="ni on">Agents</div><div class="ni">Skills</div><div class="ni">Settings</div><div class="rec">Recent</div><div class="ni" style="padding:3px 10px">Docs digest</div><div class="ni" style="padding:3px 10px">Launch checklist</div></aside>
 <div class="main">
 <header><div class="av">R</div><div><div style="font-size:12.5px;font-weight:500">Research assistant</div><div style="color:#a3a3a3;font-size:11px">Reads the web and summarizes it</div></div></header>
 <div class="u" data-t="300">Summarize the Next.js 16 release notes</div>
@@ -201,11 +208,11 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <div data-t="6900" style="margin-top:8px;font-size:13px;line-height:1.7"><div class="agent">Research assistant</div>Next.js 16 makes Turbopack the default bundler, adds Cache Components and renames middleware to proxy. Three things to check before upgrading: the async request APIs, the new caching model and the Node 20+ requirement.</div>
 </div></div>
 </div>
-<div class="info"><h3>orbz</h3><p>Agent workspace where every outward-facing tool call waits for a human. Streaming chat, MCP tools, skills, run history.</p>
+<div class="info"><h3>orb</h3><p>Agent workspace where every outward-facing tool call waits for a human. Streaming chat, MCP tools, skills, run history.</p>
 <div class="chips"><span>Next.js 16</span><span>AI SDK 7</span><span>MCP</span><span>Claude</span><span>SQLite</span></div>
-<div class="links"><a href="https://github.com/GaboRM9/orbz">source →</a></div></div></article>
+<div class="links"><a href="https://github.com/GaboRM9/orb">source →</a></div></div></article>
 
-<article class="card"><div class="demo tall" data-loop="13000"><div class="skin s-of">
+<article class="card"><div class="demo tall"><div class="skin s-of">
 <div class="box"><div class="bar2"><span class="mis">◈ MISSION: <u>EU BATTERIES</u> // HORIZON: <u>5 YEARS</u></span><span style="position:relative;min-width:140px;text-align:right"><span class="amber" data-x="5400">OMEN ONLINE</span><span data-t="5600" data-x="10500" style="position:absolute;right:0;color:#fff">TRANSMITTING REPORT</span><span data-t="10500" style="position:absolute;right:0;background:#080808;color:#737373">MISSION COMPLETE</span></span></div>
 <div class="body">
 <div data-x="5400"><div class="amber" data-t="200"><span class="blink">◈</span> OMEN: querying Polymarket — scanning active prediction markets</div>
@@ -221,24 +228,15 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <div class="chips"><span>Next.js</span><span>Claude</span><span>Polymarket</span><span>Metaculus</span></div>
 <div class="links"><a href="https://openfuture.wtf/app">live →</a><a href="https://github.com/GaboRM9/OpenFuture">source →</a></div></div></article>
 
-<article class="card"><div class="demo tall" data-loop="12000"><div class="skin s-fl">
-<aside><div class="ws"><span>Personal</span><span>▾</span></div><div class="ni on" id="fl-chat">Chat</div><div class="ni">Agents</div><div class="ni" id="fl-skills">Skills</div><div class="ni">Integrations</div></aside>
-<div style="position:relative;flex:1">
-<div class="pane" data-x="6000" style="display:flex"><div class="list"><h5>Chat</h5><div class="ci on">Webhook digest<small>Today</small></div><div class="ci">Onboarding FAQ<small>Yesterday</small></div></div>
-<div class="th"><header>Webhook digest</header><div class="m u" data-t="300">Summarize today's webhook events</div><div class="m a" data-t="1500">You had 128 events: 121 delivered, 7 failed. All failures came from one endpoint (timeouts after 10s).</div><div class="m a" data-t="3200">Want me to post this to #ops via the Slack integration?</div></div></div>
-<div class="pane" data-t="6000" style="background:#fff;background-image:radial-gradient(#e4e4e7 1px,transparent 1px);background-size:16px 16px">
-<div style="position:absolute;left:14px;top:10px;font-weight:500;font-size:12.5px">Skill: failed-webhook digest</div>
-<div class="nd" style="left:14px;top:120px">Webhook<small>trigger</small></div>
-<div class="nd" style="left:110px;top:120px">LLM<small>summarize</small></div>
-<div class="nd" style="left:200px;top:80px">Knowledge<small>RAG</small></div>
-<div class="nd" style="left:200px;top:160px">Slack<small>#ops</small></div>
-<svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 280 260"><path d="M70 136H110M160 136C180 136 180 96 200 96M160 136C180 136 180 176 200 176" stroke="#a1a1aa" fill="none"/><circle r="4" fill="#18181b"><animateMotion dur="2.5s" repeatCount="indefinite" path="M70 136H110M160 136C180 136 180 176 200 176"/></circle></svg></div>
-</div></div></div>
+<article class="card"><div class="demo tall"><div class="skin s-fl">
+<aside><div class="ws"><span>Personal</span><span>▾</span></div><div class="ni">Chat</div><div class="ni">Agents</div><div class="ni on">Skills</div><div class="ni">Integrations</div></aside>
+<div class="cv"><div class="ct">Skill: failed-webhook digest</div><svg viewBox="0 0 360 240" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Agent loop: webhook triggers the LLM, which calls a knowledge tool, reads the result, then posts to Slack"><defs><marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8z" fill="#a1a1aa"/></marker></defs><path d="M98 115H136" stroke="#a1a1aa" fill="none" stroke-width="1.5" marker-end="url(#ar)"/><path d="M222 101C244 101 242 52 262 52" stroke="#a1a1aa" fill="none" stroke-width="1.5" marker-end="url(#ar)"/><path d="M262 68C242 68 244 112 222 112" stroke="#a1a1aa" fill="none" stroke-width="1.5" marker-end="url(#ar)"/><path d="M222 126C244 126 242 170 262 170" stroke="#a1a1aa" fill="none" stroke-width="1.5" marker-end="url(#ar)"/><g><rect x="14" y="95" width="84" height="40" rx="8" fill="#fff" stroke="#e4e4e7" stroke-width="1.5"><animate attributeName="stroke" values="#e4e4e7;#e4e4e7;#18181b;#18181b;#e4e4e7;#e4e4e7" keyTimes="0;0.001;0.0015;0.13;0.135;1" dur="7.0s" repeatCount="indefinite"/></rect><text x="24" y="113" class="t1">webhook</text><text x="24" y="126" class="t2">trigger</text></g><g><rect x="138" y="95" width="84" height="40" rx="8" fill="#fff" stroke="#e4e4e7" stroke-width="1.5"><animate attributeName="stroke" values="#e4e4e7;#e4e4e7;#18181b;#18181b;#e4e4e7;#e4e4e7;#18181b;#18181b;#e4e4e7;#e4e4e7" keyTimes="0;0.125;0.13;0.2;0.205;0.465;0.47;0.58;0.585;1" dur="7.0s" repeatCount="indefinite"/></rect><text x="148" y="113" class="t1">LLM</text><text x="148" y="126" class="t2">reason</text></g><g><rect x="262" y="40" width="84" height="40" rx="8" fill="#fff" stroke="#e4e4e7" stroke-width="1.5"><animate attributeName="stroke" values="#e4e4e7;#e4e4e7;#18181b;#18181b;#e4e4e7;#e4e4e7" keyTimes="0;0.295;0.3;0.37;0.375;1" dur="7.0s" repeatCount="indefinite"/></rect><text x="272" y="58" class="t1">Knowledge</text><text x="272" y="71" class="t2">tool: RAG</text></g><g><rect x="262" y="150" width="84" height="40" rx="8" fill="#fff" stroke="#e4e4e7" stroke-width="1.5"><animate attributeName="stroke" values="#e4e4e7;#e4e4e7;#18181b;#18181b;#e4e4e7;#e4e4e7" keyTimes="0;0.695;0.7;0.82;0.825;1" dur="7.0s" repeatCount="indefinite"/></rect><text x="272" y="168" class="t1">Slack</text><text x="272" y="181" class="t2">act: #ops</text></g><circle r="4.5" fill="#18181b" opacity="0"><animateMotion path="M98 115H136" dur="7.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.03;0.13;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.025;0.03;0.13;0.135;1" dur="7.0s" repeatCount="indefinite"/></circle><circle r="4.5" fill="#18181b" opacity="0"><animateMotion path="M222 101C244 101 242 52 262 52" dur="7.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.2;0.3;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.195;0.2;0.3;0.305;1" dur="7.0s" repeatCount="indefinite"/></circle><circle r="4.5" fill="#18181b" opacity="0"><animateMotion path="M262 68C242 68 244 112 222 112" dur="7.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.37;0.47;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.365;0.37;0.47;0.475;1" dur="7.0s" repeatCount="indefinite"/></circle><circle r="4.5" fill="#18181b" opacity="0"><animateMotion path="M222 126C244 126 242 170 262 170" dur="7.0s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.58;0.7;1"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.575;0.58;0.7;0.705;1" dur="7.0s" repeatCount="indefinite"/></circle><text x="180" y="226" text-anchor="middle" class="t3" opacity="0">1 · trigger<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.001;0.0015;0.14;0.145;1" dur="7.0s" repeatCount="indefinite"/></text><text x="180" y="226" text-anchor="middle" class="t3" opacity="0">2 · reason<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.135;0.14;0.2;0.205;1" dur="7.0s" repeatCount="indefinite"/></text><text x="180" y="226" text-anchor="middle" class="t3" opacity="0">3 · tool call<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.195;0.2;0.37;0.375;1" dur="7.0s" repeatCount="indefinite"/></text><text x="180" y="226" text-anchor="middle" class="t3" opacity="0">4 · observe result<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.365;0.37;0.58;0.585;1" dur="7.0s" repeatCount="indefinite"/></text><text x="180" y="226" text-anchor="middle" class="t3" opacity="0">5 · act<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.575;0.58;0.84;0.845;1" dur="7.0s" repeatCount="indefinite"/></text></svg></div>
+</div></div>
 <div class="info"><h3>fl0u</h3><p>One surface to build, run and manage AI agents: chat, agents, skills with a visual flow editor, knowledge (RAG), integrations and webhooks.</p>
 <div class="chips"><span>Vue 3</span><span>Vue Flow</span><span>Express</span><span>Prisma</span><span>pgvector</span><span>pnpm monorepo</span></div>
 <div class="links"><a href="https://github.com/GaboRM9/fl0u">source →</a></div></div></article>
 
-<article class="card"><div class="demo tall" data-loop="9000"><div class="skin s-hy">
+<article class="card"><div class="demo tall"><div class="skin s-hy">
 <div class="ttl">AI Audience Architect</div>
 <div class="row2"><div class="inp"><span class="type" data-t="200" style="--n:26;color:#000">https://sneakers.shop/air-1</span></div><div class="btn2">Generate</div></div>
 <div data-t="1800"><div class="st">Micro-tribes</div>
@@ -252,7 +250,7 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 <div class="chips"><span>React</span><span>Express</span><span>Gemini</span><span>Prisma</span><span>Stripe</span></div>
 <div class="links"><a href="https://github.com/GaboRM9/hyp3rT4rget">source →</a></div></div></article>
 
-<article class="card"><div class="demo tall" data-loop="12000"><div class="skin s-sk">
+<article class="card"><div class="demo tall"><div class="skin s-sk">
 <div><span style="color:#fff">❯</span> <span class="type" data-t="200" style="--n:44">for d in skills/*/; do cp "$d/SKILL.md" ...</span></div>
 <div class="dim" data-t="1500">copied 52 skills</div>
 <div class="cols2" data-t="2000"><span>agent-spec</span><span>failure-modes</span><span>eval-suite</span><span>guardrail-design</span><span>autonomy-ladder</span><span>prompt-injection-audit</span><span>tool-design</span><span>cost-optimizer</span><span>trajectory-review</span><span>loop-breaker</span><span>permissions-audit</span><span>rollback-plan</span></div>
@@ -276,7 +274,7 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 
 <h2>writing</h2>
 <div class="posts">
-<a href="posts/approval-gates.html"><b>Approval gates for agents: ask before the side effect</b><span>How orbz decides which tool calls need a human, and how decisions are logged.</span></a>
+<a href="posts/approval-gates.html"><b>Approval gates for agents: ask before the side effect</b><span>How orb decides which tool calls need a human, and how decisions are logged.</span></a>
 <a href="posts/ssrf-safe-fetch.html"><b>Giving an agent a fetch tool without opening your network</b><span>The SSRF checks behind a fetchUrl tool, and the one gap I left open on purpose.</span></a>
 </div>
 
@@ -285,31 +283,12 @@ footer{padding:80px 0 50px;font-family:var(--mono);font-size:.85rem;color:var(--
 
 <h2 id="contact">contact</h2>
 <div class="box" style="padding:28px"><b style="font-size:1.4rem;letter-spacing:-.02em;margin-bottom:6px">Have an agent to build, or a team hiring for one?</b><p style="margin-bottom:16px">Email me what it should do and what it must never do. I'll reply with how I'd build it.</p><div class="cta" style="margin:0"><a class="btn p" href="mailto:gabo9rm@gmail.com">gabo9rm@gmail.com</a><a class="btn" href="https://github.com/GaboRM9">GitHub</a></div></div>
-<footer>demos are simulations rebuilt from each project's real UI code (tokens, labels, tool names), colors desaturated to match this page · hand-built, no framework<br><a href="mailto:gabo9rm@gmail.com">gabo9rm@gmail.com</a> · <a href="https://github.com/GaboRM9">github.com/GaboRM9</a></footer>
+<footer>previews are rebuilt from each project's real UI code (tokens, labels, tool names), colors desaturated to match this page · the flow diagram is an example of agentic handling · hand-built, no framework<br><a href="mailto:gabo9rm@gmail.com">gabo9rm@gmail.com</a> · <a href="https://github.com/GaboRM9">github.com/GaboRM9</a></footer>
 </div>
 
 <script>
-// scripted demos: reveal [data-t] elements at their ms offset, loop, run only while on screen
-document.querySelectorAll('.demo[data-loop]').forEach(d=>{
-  const els=[...d.querySelectorAll('[data-t]')],xs=[...d.querySelectorAll('[data-x]')];let timers=[],run=false;
-  const T=(f,ms)=>timers.push(setTimeout(f,ms));
-  const sk=d.querySelector('.skin');
-  const play=()=>{
-    if(sk)T(()=>sk.classList.remove('fade'),150);
-    els.forEach(e=>e.classList.remove('on'));xs.forEach(e=>e.classList.remove('gone'));
-    els.forEach(e=>T(()=>e.classList.add('on'),+e.dataset.t));
-    xs.forEach(e=>T(()=>e.classList.add('gone'),+e.dataset.x));
-    const ap=d.querySelector('[data-ap]');if(ap){T(()=>ap.classList.add('press'),4800);T(()=>ap.classList.remove('press'),5100)}
-    const fc=d.querySelector('#fl-chat'),fs=d.querySelector('#fl-skills');
-    if(fc){fc.classList.add('on');fs.classList.remove('on');T(()=>{fc.classList.remove('on');fs.classList.add('on')},6000)}
-    if(sk)T(()=>sk.classList.add('fade'),+d.dataset.loop-700);
-    T(()=>run&&play(),+d.dataset.loop);
-  };
-  new IntersectionObserver(([en])=>{
-    if(en.isIntersecting&&!run){run=true;play()}
-    else if(!en.isIntersecting){run=false;timers.forEach(clearTimeout)}
-  }).observe(d);
-});
+// SMIL ignores prefers-reduced-motion, so pause the flow diagram for people who ask
+if(matchMedia("(prefers-reduced-motion: reduce)").matches)document.querySelectorAll("svg").forEach(v=>v.pauseAnimations&&v.pauseAnimations());
 </script>
 </body>
 </html>
